@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<html lang="es-PA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clinic Capullo | Clínica Pediátrica en Panamá</title>
+  <meta name="description" content="Clinic Capullo en Ciudad de Panamá acompaña la salud y el desarrollo infantil con pediatría integral, sueño, alimentación, neurodiversidad y crecimiento." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://www.cliniccapullo.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Clinic Capullo | Pediatría integral en Panamá" />
+  <meta property="og:description" content="Acompañamiento pediátrico empático para el desarrollo, sueño, alimentación, neurodiversidad y crecimiento infantil." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.cliniccapullo.com/" />
+  <meta property="og:image" content="https://www.cliniccapullo.com/logo.png" />
+  <meta name="theme-color" content="#E6007E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+
+  <!-- Three.js: solo librería externa necesaria para la escena 3D -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+
+  <!-- Schema.org / JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "Clinic Capullo",
+    "image": "https://www.cliniccapullo.com/logo.png",
+    "url": "https://www.cliniccapullo.com/",
+    "telephone": "+507-390-8997",
+    "priceRange": "$$",
+    "currenciesAccepted": "USD",
+    "medicalSpecialty": "Pediatrics",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Panamá"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Ciudad de Panamá",
+      "addressLocality": "Ciudad de Panamá",
+      "addressRegion": "Panamá",
+      "addressCountry": "PA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 8.9833,
+      "longitude": -79.5167
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      }
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+507-6364-0108",
+      "contactType": "WhatsApp",
+      "availableLanguage": "Spanish"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Atienden niños con Autismo o TDAH?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Clinic Capullo acompaña perfiles de neurodiversidad con una mirada pediátrica respetuosa, sensorial y centrada en la familia."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es la preconsulta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Es una herramienta para orientar el motivo de consulta y enviar información inicial por WhatsApp antes de coordinar la atención. No reemplaza una evaluación médica."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Dónde está ubicada Clinic Capullo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Clinic Capullo atiende en Ciudad de Panamá. Al contactar por WhatsApp se puede solicitar la ubicación exacta y disponibilidad."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #fffdfb;
+      --surface: #ffffff;
+      --cream: #fff8ef;
+      --pink-soft: #fff1f7;
+      --fuchsia: #e6007e;
+      --coral: #ff8a65;
+      --orange: #f7a35c;
+      --text: #34343a;
+      --muted: #746d70;
+      --line: rgba(230, 0, 126, 0.12);
+      --shadow: 0 24px 70px rgba(52, 52, 58, 0.08);
+      --radius: 28px;
+      --header: 78px;
+      --transition: 220ms ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--header) + 24px);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Nunito Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    img, svg, canvas {
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, select, textarea {
+      font: inherit;
+    }
+
+    button {
+      border: 0;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: "Playfair Display", Georgia, serif;
+      line-height: 1.08;
+      color: var(--text);
+    }
+
+    h1 {
+      max-width: 880px;
+      font-size: clamp(2.45rem, 6vw, 5.1rem);
+      letter-spacing: -0.045em;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      letter-spacing: -0.035em;
+    }
+
+    h3 {
+      font-size: clamp(1.35rem, 2vw, 1.75rem);
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      color: var(--fuchsia);
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--fuchsia), var(--coral));
+    }
+
+    .section {
+      position: relative;
+      padding: clamp(70px, 9vw, 120px) 0;
+    }
+
+    .section-header {
+      max-width: 760px;
+      margin-bottom: 42px;
+    }
+
+    .section-header.center {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .section-header.center .eyebrow {
+      justify-content: center;
+    }
+
+    .section-header.center .eyebrow::before {
+      display: none;
+    }
+
+    .section-header p {
+      margin-top: 18px;
+      font-size: 1.08rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 24px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 800;
+      gap: 10px;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition), border-color var(--transition);
+    }
+
+    .btn:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible,
+    button:focus-visible {
+      outline: 3px solid rgba(230, 0, 126, 0.35);
+      outline-offset: 3px;
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--fuchsia), var(--coral));
+      box-shadow: 0 16px 30px rgba(230, 0, 126, 0.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 38px rgba(230, 0, 126, 0.28);
+    }
+
+    .btn-outline {
+      color: var(--fuchsia);
+      background: rgba(255, 255, 255, 0.6);
+      border: 2px solid rgba(230, 0, 126, 0.22);
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(230, 0, 126, 0.48);
+      transform: translateY(-2px);
+    }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 1000;
+      min-height: var(--header);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 253, 251, 0.88);
+      backdrop-filter: blur(14px);
+    }
+
+    .header-inner {
+      min-height: var(--header);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 700;
+      font-size: 1.34rem;
+      letter-spacing: -0.02em;
+      color: var(--fuchsia);
+      white-space: nowrap;
+    }
+
+    .logo-mark {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--pink-soft), #fff);
+      box-shadow: inset 0 0 0 1px rgba(230, 0, 126, 0.12);
+    }
+
+    .nav-list {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+    }
+
+    .nav-list a:not(.btn) {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 8px 11px;
+      border-radius: 999px;
+      color: #4d474a;
+      font-size: 0.93rem;
+      font-weight: 800;
+      transition: color var(--transition), background var(--transition);
+    }
+
+    .nav-list a:hover,
+    .nav-list a.is-active {
+      color: var(--fuchsia);
+      background: var(--pink-soft);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: var(--pink-soft);
+      color: var(--fuchsia);
+      cursor: pointer;
+      font-size: 1.35rem;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      align-items: center;
+      padding: calc(var(--header) + 70px) 0 70px;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: min(58vw, 740px);
+      aspect-ratio: 1;
+      right: -15vw;
+      top: 8vh;
+      z-index: -3;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 138, 101, 0.28), rgba(255, 241, 247, 0.08) 62%, transparent 72%);
+    }
+
+    #hero-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      opacity: 0.56;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(290px, 0.62fr);
+      align-items: center;
+      gap: 48px;
+    }
+
+    .hero-copy p.lead {
+      max-width: 720px;
+      margin-top: 22px;
+      font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+      color: #61595d;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .trust-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 32px;
+      list-style: none;
+    }
+
+    .trust-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 12px 14px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--line);
+      color: #4e484b;
+      font-weight: 700;
+      box-shadow: 0 8px 25px rgba(52, 52, 58, 0.04);
+    }
+
+    .check {
+      color: var(--fuchsia);
+      font-weight: 900;
+    }
+
+    .hero-card {
+      position: relative;
+      padding: 28px;
+      border-radius: 34px;
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      z-index: -1;
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(230, 0, 126, 0.09), rgba(255, 138, 101, 0.1));
+    }
+
+    .mini-stat {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 16px;
+      border-radius: 22px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .mini-stat + .mini-stat {
+      margin-top: 12px;
+    }
+
+    .mini-icon {
+      display: grid;
+      place-items: center;
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: var(--pink-soft);
+      color: var(--fuchsia);
+      font-size: 1.35rem;
+    }
+
+    .mini-stat strong {
+      display: block;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .mini-stat span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .alert-note {
+      margin-top: 20px;
+      padding: 14px 16px;
+      border-radius: 20px;
+      background: var(--cream);
+      border: 1px solid rgba(247, 163, 92, 0.22);
+      color: #6d5b4c;
+      font-size: 0.92rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      padding: 30px;
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 40px rgba(52, 52, 58, 0.045);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(230, 0, 126, 0.28);
+      box-shadow: 0 22px 60px rgba(52, 52, 58, 0.08);
+    }
+
+    .card-icon {
+      display: grid;
+      place-items: center;
+      width: 60px;
+      height: 60px;
+      margin-bottom: 20px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, var(--pink-soft), #fff7ef);
+      color: var(--fuchsia);
+      font-size: 1.55rem;
+    }
+
+    .card p {
+      margin-top: 12px;
+    }
+
+    .soft-band {
+      background: linear-gradient(135deg, var(--pink-soft), var(--cream));
+      border-block: 1px solid var(--line);
+    }
+
+    .feature-panel {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: center;
+      gap: 34px;
+      padding: clamp(30px, 5vw, 62px);
+      border-radius: 42px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: var(--shadow);
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 14px;
+      list-style: none;
+    }
+
+    .feature-list li {
+      display: flex;
+      gap: 12px;
+      padding: 15px 16px;
+      border-radius: 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      font-weight: 700;
+      color: #4d474a;
+    }
+
+    .quote-box {
+      margin-top: 24px;
+      padding: 24px;
+      border-radius: 26px;
+      background: #fff;
+      border-left: 5px solid var(--fuchsia);
+      color: #5e565a;
+      box-shadow: 0 12px 35px rgba(52, 52, 58, 0.055);
+    }
+
+    .preconsulta {
+      background: radial-gradient(circle at top left, rgba(255, 138, 101, 0.18), transparent 34%), linear-gradient(180deg, #fff, var(--pink-soft));
+    }
+
+    .stepper {
+      max-width: 880px;
+      margin-inline: auto;
+      padding: clamp(24px, 4vw, 44px);
+      border-radius: 38px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(230, 0, 126, 0.13);
+      box-shadow: var(--shadow);
+    }
+
+    .step-progress {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 34px;
+    }
+
+    .step-progress::before {
+      content: "";
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      top: 50%;
+      height: 2px;
+      transform: translateY(-50%);
+      background: var(--pink-soft);
+      z-index: 0;
+    }
+
+    .step-dot {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      background: #fff;
+      border: 2px solid var(--pink-soft);
+      color: var(--muted);
+      font-weight: 900;
+      transition: var(--transition);
+    }
+
+    .step-dot.active {
+      border-color: var(--fuchsia);
+      color: var(--fuchsia);
+      transform: scale(1.08);
+    }
+
+    .step-dot.completed {
+      background: var(--fuchsia);
+      border-color: var(--fuchsia);
+      color: #fff;
+    }
+
+    .form-step {
+      display: none;
+    }
+
+    .form-step.active {
+      display: block;
+      animation: stepIn 260ms ease;
+    }
+
+    @keyframes stepIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .form-step > p {
+      margin: 10px 0 22px;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .option-card {
+      min-height: 132px;
+      padding: 18px;
+      border-radius: 22px;
+      background: #fff;
+      border: 2px solid var(--pink-soft);
+      cursor: pointer;
+      text-align: center;
+      color: #4d474a;
+      font-weight: 800;
+      transition: var(--transition);
+    }
+
+    .option-card span {
+      display: block;
+      font-size: 1.7rem;
+      margin-bottom: 8px;
+    }
+
+    .option-card:hover,
+    .option-card[aria-pressed="true"] {
+      border-color: var(--fuchsia);
+      background: var(--pink-soft);
+      color: var(--fuchsia);
+      transform: translateY(-2px);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .input-group {
+      margin-bottom: 18px;
+    }
+
+    .input-group.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      min-height: 50px;
+      padding: 13px 14px;
+      border: 1px solid rgba(230, 0, 126, 0.17);
+      border-radius: 16px;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: rgba(230, 0, 126, 0.55);
+      box-shadow: 0 0 0 4px rgba(230, 0, 126, 0.08);
+    }
+
+    .field-error {
+      display: none;
+      margin-top: 6px;
+      color: #b00020;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .input-group.has-error input,
+    .input-group.has-error select,
+    .input-group.has-error textarea {
+      border-color: #b00020;
+    }
+
+    .input-group.has-error .field-error {
+      display: block;
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .summary-box {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 20px;
+      background: var(--cream);
+      border: 1px solid rgba(247, 163, 92, 0.24);
+      color: #554b4e;
+      white-space: pre-line;
+    }
+
+    .consent-row {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px;
+      align-items: start;
+      margin: 18px 0;
+      color: #554b4e;
+    }
+
+    .consent-row input {
+      width: 18px;
+      min-height: 18px;
+      margin-top: 4px;
+      accent-color: var(--fuchsia);
+    }
+
+    .faq-list {
+      max-width: 900px;
+      margin-inline: auto;
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq-item {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 20px 22px;
+      background: #fff;
+      cursor: pointer;
+      text-align: left;
+      font-family: "Playfair Display", Georgia, serif;
+      color: var(--text);
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .faq-answer {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows var(--transition);
+    }
+
+    .faq-answer > div {
+      overflow: hidden;
+    }
+
+    .faq-answer p {
+      padding: 0 22px 20px;
+    }
+
+    .faq-item.active .faq-answer {
+      grid-template-rows: 1fr;
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      padding: clamp(28px, 5vw, 54px);
+      border-radius: 40px;
+      background: var(--text);
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .contact-card::after {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      right: -150px;
+      top: -130px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(230, 0, 126, 0.34), transparent 68%);
+    }
+
+    .contact-card h2,
+    .contact-card h3,
+    .contact-card p {
+      color: #fff;
+    }
+
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .contact-list li {
+      color: rgba(255, 255, 255, 0.82);
+      display: flex;
+      gap: 10px;
+    }
+
+    footer {
+      padding: 44px 0;
+      background: var(--cream);
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 1001;
+      display: grid;
+      place-items: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 999px;
+      background: #25d366;
+      color: #fff;
+      font-size: 1.55rem;
+      box-shadow: 0 16px 34px rgba(37, 211, 102, 0.32);
+      animation: pulse 2.4s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.36); }
+      75% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 650ms ease, transform 650ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .feature-panel,
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        max-width: 620px;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-list {
+        gap: 2px;
+      }
+
+      .nav-list a:not(.btn) {
+        padding-inline: 8px;
+        font-size: 0.88rem;
+      }
+    }
+
+    @media (max-width: 780px) {
+      :root {
+        --header: 70px;
+      }
+
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .menu-toggle {
+        display: grid;
+        place-items: center;
+      }
+
+      .main-nav {
+        position: fixed;
+        inset: var(--header) 14px auto;
+        display: none;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.97);
+        box-shadow: var(--shadow);
+      }
+
+      .main-nav.open {
+        display: block;
+      }
+
+      .nav-list {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-list a,
+      .nav-list .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero {
+        padding-top: calc(var(--header) + 44px);
+      }
+
+      .trust-list,
+      .grid-2,
+      .grid-3,
+      .form-grid,
+      .options-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .option-card {
+        min-height: auto;
+      }
+
+      .form-actions {
+        flex-direction: column;
+      }
+
+      .form-actions .btn {
+        width: 100%;
+      }
+
+      .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        right: 16px;
+        bottom: 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="logo" href="#inicio" aria-label="Ir al inicio de Clinic Capullo">
+        <span class="logo-mark" aria-hidden="true">🌱</span>
+        Clinic Capullo
+      </a>
+
+      <button class="menu-toggle" id="menuBtn" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menú">
+        ☰
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#areas">Áreas</a></li>
+          <li><a href="#endocrinologia">Endocrinología</a></li>
+          <li><a href="#neurodiversidad">Neurodiversidad</a></li>
+          <li><a href="#suenio">Sueño</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a class="btn btn-primary" href="#preconsulta">Contar mi caso</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Pediatría integral en Panamá</span>
+          <h1 id="hero-title">Acompañamos el desarrollo de tu hijo con ciencia, calma y empatía</h1>
+          <p class="lead">Clinic Capullo ayuda a las familias a entender mejor la salud, el sueño, la alimentación, la neurodiversidad y el crecimiento infantil, con una mirada respetuosa del ritmo de cada niño.</p>
+
+          <div class="hero-actions">
+            <a href="#preconsulta" class="btn btn-primary">Contar mi caso antes de la cita</a>
+            <a href="https://wa.me/50763640108?text=Hola%20Clinic%20Capullo%2C%20quiero%20coordinar%20una%20consulta" target="_blank" rel="noopener" class="btn btn-outline">Escribir por WhatsApp</a>
+          </div>
+
+          <ul class="trust-list" aria-label="Servicios destacados">
+            <li><span class="check">✓</span> Pediatría con enfoque integral</li>
+            <li><span class="check">✓</span> Sueño, alimentación y desarrollo</li>
+            <li><span class="check">✓</span> Neurodiversidad: Autismo y TDAH</li>
+            <li><span class="check">✓</span> Crecimiento y señales hormonales</li>
+          </ul>
+
+          <p class="alert-note"><strong>Importante:</strong> esta web no atiende emergencias. Si hay dificultad respiratoria, convulsiones, deshidratación, decaimiento severo o fiebre persistente, acude a urgencias.</p>
+        </div>
+
+        <aside class="hero-card reveal" aria-label="Resumen de atención">
+          <div class="mini-stat">
+            <span class="mini-icon" aria-hidden="true">🩺</span>
+            <div>
+              <strong>Atención pediátrica</strong>
+              <span>Controles, orientación familiar y seguimiento del desarrollo.</span>
+            </div>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-icon" aria-hidden="true">🧠</span>
+            <div>
+              <strong>Mirada sensorial</strong>
+              <span>Más allá de la conducta: entender lo que el niño necesita.</span>
+            </div>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-icon" aria-hidden="true">💬</span>
+            <div>
+              <strong>Preconsulta por WhatsApp</strong>
+              <span>La familia envía el motivo inicial y la clínica responde con mejor contexto.</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="areas" aria-labelledby="areas-title">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="eyebrow">Áreas de acompañamiento</span>
+          <h2 id="areas-title">Una clínica pediátrica pensada para la vida real de las familias</h2>
+          <p>No se trata solo de tratar síntomas. Se trata de observar el desarrollo completo del niño y orientar a la familia con claridad.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card reveal">
+            <span class="card-icon" aria-hidden="true">🩺</span>
+            <h3>Consulta pediátrica</h3>
+            <p>Controles de salud, seguimiento preventivo, orientación familiar y acompañamiento de cada etapa del crecimiento.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card-icon" aria-hidden="true">🧠</span>
+            <h3>Neurodiversidad</h3>
+            <p>Apoyo para niños con perfiles sensoriales diversos, Autismo, TDAH y necesidades de regulación emocional.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card-icon" aria-hidden="true">🌙</span>
+            <h3>Sueño infantil</h3>
+            <p>Rutinas respetuosas, higiene del sueño y orientación para mejorar el descanso del niño y de la familia.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card-icon" aria-hidden="true">🍎</span>
+            <h3>Alimentación valiente</h3>
+            <p>Acompañamiento de alimentación selectiva, rechazo de alimentos y neofobia alimentaria desde la seguridad emocional.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card-icon" aria-hidden="true">📈</span>
+            <h3>Crecimiento y endocrinología</h3>
+            <p>Evaluación de crecimiento, pubertad precoz, señales hormonales y factores ambientales que pueden influir.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card-icon" aria-hidden="true">🏡</span>
+            <h3>Orientación para casa</h3>
+            <p>Recomendaciones prácticas para que las familias sepan qué observar, cuándo consultar y cómo acompañar mejor.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft-band" id="endocrinologia" aria-labelledby="endo-title">
+      <div class="container">
+        <div class="feature-panel reveal">
+          <div>
+            <span class="eyebrow">Crecimiento infantil</span>
+            <h2 id="endo-title">Endocrinología pediátrica: señales que merecen atención</h2>
+            <p style="margin-top:18px;">El crecimiento infantil tiene su propio lenguaje. Cambios tempranos, variaciones de talla, olor corporal, pubertad precoz o dudas sobre disruptores endocrinos merecen una mirada profesional.</p>
+            <div class="quote-box">“Algunos disruptores endocrinos pueden actuar como llaves falsas: confunden al cuerpo y abren puertas antes de tiempo.”</div>
+          </div>
+
+          <ul class="feature-list">
+            <li><span class="check">✓</span> Evaluación de crecimiento y desarrollo puberal.</li>
+            <li><span class="check">✓</span> Orientación sobre exposición a BPA, ftalatos y fragancias intensas.</li>
+            <li><span class="check">✓</span> Consejos adaptados al calor y humedad de Panamá.</li>
+            <li><span class="check">✓</span> Señales de alerta explicadas en lenguaje familiar.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="neurodiversidad" aria-labelledby="neuro-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Neurodiversidad</span>
+          <h2 id="neuro-title">Entender los sentidos también es cuidar</h2>
+          <p>Muchos niños no “se portan mal”. A veces están intentando organizar lo que sienten por dentro y por fuera. Por eso miramos más allá de la conducta.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card reveal">
+            <span class="card-icon" aria-hidden="true">🧭</span>
+            <h3>Propiocepción</h3>
+            <p>El mapa interno del cuerpo: cómo el niño percibe su fuerza, postura y ubicación en el espacio.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card-icon" aria-hidden="true">🎡</span>
+            <h3>Sistema vestibular</h3>
+            <p>El GPS del equilibrio y movimiento: puede activar, calmar o desorganizar según el perfil del niño.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card-icon" aria-hidden="true">🚦</span>
+            <h3>Interocepción</h3>
+            <p>El semáforo interno: hambre, sueño, dolor, ganas de ir al baño y señales emocionales.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft-band" id="suenio" aria-labelledby="suenio-title">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="eyebrow">Sueño infantil</span>
+          <h2 id="suenio-title">La rutina de las 3 C para bajar revoluciones</h2>
+          <p>Un descanso más sano no siempre empieza con reglas duras. Muchas veces empieza con una transición más predecible.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card reveal">
+            <span class="card-icon" aria-hidden="true">🍽️</span>
+            <h3>Cena</h3>
+            <p>Una transición amable, nutritiva y sin prisas para preparar el cuerpo para descansar.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card-icon" aria-hidden="true">🕯️</span>
+            <h3>Calma</h3>
+            <p>Bajar luces, pantallas y estímulos. El cerebro necesita señales claras de cierre del día.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card-icon" aria-hidden="true">🛏️</span>
+            <h3>Cama</h3>
+            <p>Repetir un ritual simple y constante que le diga al niño: “ahora es momento de descansar”.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section preconsulta" id="preconsulta" aria-labelledby="preconsulta-title">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="eyebrow">Herramienta interactiva</span>
+          <h2 id="preconsulta-title">Cuéntanos el caso antes de escribir por WhatsApp</h2>
+          <p>Este formulario organiza la información inicial para que el primer contacto sea más claro. No reemplaza una evaluación médica.</p>
+        </div>
+
+        <div class="stepper reveal" id="preconsultaForm">
+          <div class="step-progress" aria-label="Progreso del formulario">
+            <div class="step-dot active" data-step="1">1</div>
+            <div class="step-dot" data-step="2">2</div>
+            <div class="step-dot" data-step="3">3</div>
+            <div class="step-dot" data-step="4">4</div>
+          </div>
+
+          <form id="multiStepForm" novalidate>
+            <input type="hidden" id="motivo" name="motivo" />
+
+            <div class="form-step active" id="step-1">
+              <h3>¿Cuál es el motivo principal?</h3>
+              <p>Selecciona la opción que más se acerca a lo que está pasando.</p>
+              <div class="options-grid" role="group" aria-label="Motivo de consulta">
+                <button type="button" class="option-card" data-value="Enfermedad aguda" aria-pressed="false"><span>🌡️</span>Enfermedad aguda</button>
+                <button type="button" class="option-card" data-value="Control pediátrico" aria-pressed="false"><span>🧒</span>Control pediátrico</button>
+                <button type="button" class="option-card" data-value="Sueño infantil" aria-pressed="false"><span>🌙</span>Sueño infantil</button>
+                <button type="button" class="option-card" data-value="Alimentación" aria-pressed="false"><span>🍎</span>Alimentación</button>
+                <button type="button" class="option-card" data-value="Neurodiversidad" aria-pressed="false"><span>🧠</span>Neurodiversidad</button>
+                <button type="button" class="option-card" data-value="Crecimiento u hormonal" aria-pressed="false"><span>📈</span>Crecimiento u hormonal</button>
+              </div>
+            </div>
+
+            <div class="form-step" id="step-2">
+              <h3>Datos básicos</h3>
+              <p>Usa solo la información que te sientas cómodo compartiendo por WhatsApp.</p>
+              <div class="form-grid">
+                <div class="input-group">
+                  <label for="acudiente">Nombre del acudiente *</label>
+                  <input type="text" id="acudiente" autocomplete="name" placeholder="Ej: María Pérez" data-required="true" />
+                  <span class="field-error">Indica el nombre del acudiente.</span>
+                </div>
+                <div class="input-group">
+                  <label for="telefono">Teléfono de contacto *</label>
+                  <input type="tel" id="telefono" inputmode="tel" placeholder="Ej: 6XXX-XXXX" data-required="true" />
+                  <span class="field-error">Indica un teléfono de contacto.</span>
+                </div>
+                <div class="input-group">
+                  <label for="paciente">Nombre del niño/a</label>
+                  <input type="text" id="paciente" placeholder="Nombre o iniciales" />
+                </div>
+                <div class="input-group">
+                  <label for="edad">Edad del paciente *</label>
+                  <input type="text" id="edad" placeholder="Ej: 3 años" data-required="true" />
+                  <span class="field-error">Indica la edad del paciente.</span>
+                </div>
+                <div class="input-group full">
+                  <label for="zona">Zona o barrio en Panamá</label>
+                  <input type="text" id="zona" placeholder="Ej: San Francisco, Costa del Este, Bella Vista..." />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-step" id="step-3">
+              <h3>Detalles del caso</h3>
+              <p>Estas preguntas cambian según el motivo que seleccionaste.</p>
+              <div id="conditionalFields"></div>
+            </div>
+
+            <div class="form-step" id="step-4">
+              <h3>Finalizar y enviar</h3>
+              <div class="form-grid">
+                <div class="input-group">
+                  <label for="prefContacto">Preferencia de contacto</label>
+                  <select id="prefContacto">
+                    <option value="WhatsApp">WhatsApp</option>
+                    <option value="Llamada telefónica">Llamada telefónica</option>
+                  </select>
+                </div>
+                <div class="input-group">
+                  <label for="horario">Horario preferido</label>
+                  <input type="text" id="horario" placeholder="Ej: Mañanas entre 8 y 10" />
+                </div>
+              </div>
+
+              <label class="consent-row" for="consent">
+                <input type="checkbox" id="consent" />
+                <span>Entiendo que esta preconsulta no reemplaza una evaluación médica y que, ante señales de emergencia, debo acudir a urgencias.</span>
+              </label>
+
+              <div id="summary" class="summary-box" aria-live="polite"></div>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn btn-outline" id="prevBtn" style="visibility:hidden;">Anterior</button>
+              <button type="button" class="btn btn-primary" id="nextBtn">Siguiente</button>
+              <button type="button" class="btn btn-primary" id="submitBtn" style="display:none;">Enviar por WhatsApp</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="eyebrow">Preguntas frecuentes</span>
+          <h2 id="faq-title">Dudas comunes antes de contactar</h2>
+        </div>
+
+        <div class="faq-list reveal">
+          <article class="faq-item active">
+            <button class="faq-question" type="button" aria-expanded="true">¿Atienden niños con Autismo o TDAH? <span aria-hidden="true">⌄</span></button>
+            <div class="faq-answer"><div><p>Sí. La orientación se realiza desde una mirada respetuosa, sensorial y centrada en entender las necesidades del niño y la familia.</p></div></div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">¿La preconsulta reemplaza una cita médica? <span aria-hidden="true">⌄</span></button>
+            <div class="faq-answer"><div><p>No. Solo ayuda a organizar la información inicial para que el contacto por WhatsApp sea más claro y útil.</p></div></div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">¿Qué hago si mi hijo tiene señales de emergencia? <span aria-hidden="true">⌄</span></button>
+            <div class="faq-answer"><div><p>Ante dificultad respiratoria, convulsiones, deshidratación, decaimiento severo o fiebre persistente, acude a urgencias de inmediato.</p></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto" aria-labelledby="contacto-title">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div>
+            <span class="eyebrow" style="color:#fff;">Contacto</span>
+            <h2 id="contacto-title">Clinic Capullo</h2>
+            <p style="margin-top:16px;">Clínica pediátrica en Ciudad de Panamá para acompañar el desarrollo infantil integral.</p>
+            <ul class="contact-list">
+              <li><span aria-hidden="true">☎️</span> 390-8997</li>
+              <li><span aria-hidden="true">💬</span> WhatsApp: +507 6364-0108</li>
+              <li><span aria-hidden="true">📍</span> Ciudad de Panamá, Panamá</li>
+              <li><span aria-hidden="true">🕘</span> Lunes a viernes: 8:00 a.m. - 5:00 p.m.</li>
+            </ul>
+          </div>
+
+          <div style="align-self:center; position:relative; z-index:1;">
+            <h3>¿Quieres orientar tu caso?</h3>
+            <p style="margin:12px 0 22px;">Completa la preconsulta o escribe directamente por WhatsApp. Mientras más claro sea el motivo, mejor será el primer contacto.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#preconsulta">Completar preconsulta</a>
+              <a class="btn btn-outline" style="color:#fff; border-color:rgba(255,255,255,.36); background:rgba(255,255,255,.08);" href="https://wa.me/50763640108?text=Hola%20Clinic%20Capullo%2C%20quiero%20coordinar%20una%20consulta" target="_blank" rel="noopener">WhatsApp directo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Clinic Capullo. Ciudad de Panamá.</p>
+      <p>Información orientativa. No reemplaza una evaluación médica.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/50763640108?text=Hola%20Clinic%20Capullo%2C%20quiero%20coordinar%20una%20consulta" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Escribir a Clinic Capullo por WhatsApp">💬</a>
+
+  <script>
+    "use strict";
+
+    const WHATSAPP_PHONE = "50763640108";
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    document.addEventListener("DOMContentLoaded", () => {
+      initHeader();
+      initRevealAnimations();
+      initFaq();
+      initPreconsulta();
+      initThreeScene();
+      document.getElementById("year").textContent = new Date().getFullYear();
+    });
+
+    function initHeader() {
+      const menuBtn = document.getElementById("menuBtn");
+      const nav = document.getElementById("mainNav");
+      const links = nav.querySelectorAll("a");
+      const sections = document.querySelectorAll("main section[id]");
+
+      menuBtn.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("open");
+        document.body.classList.toggle("menu-open", isOpen);
+        menuBtn.setAttribute("aria-expanded", String(isOpen));
+        menuBtn.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+      });
+
+      links.forEach(link => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("open");
+          document.body.classList.remove("menu-open");
+          menuBtn.setAttribute("aria-expanded", "false");
+          menuBtn.setAttribute("aria-label", "Abrir menú");
+        });
+      });
+
+      const activeObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const id = entry.target.getAttribute("id");
+          links.forEach(link => link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`));
+        });
+      }, { rootMargin: "-40% 0px -52% 0px", threshold: 0.01 });
+
+      sections.forEach(section => activeObserver.observe(section));
+    }
+
+    function initRevealAnimations() {
+      const elements = document.querySelectorAll(".reveal");
+      if (prefersReducedMotion) {
+        elements.forEach(el => el.classList.add("is-visible"));
+        return;
+      }
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      elements.forEach(el => observer.observe(el));
+    }
+
+    function initFaq() {
+      document.querySelectorAll(".faq-question").forEach(button => {
+        button.addEventListener("click", () => {
+          const item = button.closest(".faq-item");
+          const expanded = item.classList.toggle("active");
+          button.setAttribute("aria-expanded", String(expanded));
+        });
+      });
+    }
+
+    function initPreconsulta() {
+      let currentStep = 1;
+      const totalSteps = 4;
+      let selectedReason = "";
+
+      const form = document.getElementById("multiStepForm");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const submitBtn = document.getElementById("submitBtn");
+      const summary = document.getElementById("summary");
+      const conditionalFields = document.getElementById("conditionalFields");
+      const motivoInput = document.getElementById("motivo");
+
+      document.querySelectorAll(".option-card").forEach(card => {
+        card.addEventListener("click", () => {
+          document.querySelectorAll(".option-card").forEach(item => item.setAttribute("aria-pressed", "false"));
+          card.setAttribute("aria-pressed", "true");
+          selectedReason = card.dataset.value;
+          motivoInput.value = selectedReason;
+          injectConditionalFields(selectedReason);
+        });
+      });
+
+      nextBtn.addEventListener("click", () => {
+        if (!validateStep(currentStep)) return;
+        if (currentStep < totalSteps) {
+          currentStep += 1;
+          updateStepper();
+        }
+      });
+
+      prevBtn.addEventListener("click", () => {
+        if (currentStep > 1) {
+          currentStep -= 1;
+          updateStepper();
+        }
+      });
+
+      submitBtn.addEventListener("click", () => {
+        if (!document.getElementById("consent").checked) {
+          alert("Debes aceptar que esta preconsulta no reemplaza una evaluación médica.");
+          return;
+        }
+
+        const message = buildWhatsAppMessage();
+        const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
+        window.open(url, "_blank", "noopener");
+      });
+
+      function updateStepper() {
+        document.querySelectorAll(".form-step").forEach(step => step.classList.remove("active"));
+        document.getElementById(`step-${currentStep}`).classList.add("active");
+
+        document.querySelectorAll(".step-dot").forEach(dot => {
+          const stepNumber = Number(dot.dataset.step);
+          dot.classList.toggle("active", stepNumber === currentStep);
+          dot.classList.toggle("completed", stepNumber < currentStep);
+        });
+
+        prevBtn.style.visibility = currentStep === 1 ? "hidden" : "visible";
+        nextBtn.style.display = currentStep === totalSteps ? "none" : "inline-flex";
+        submitBtn.style.display = currentStep === totalSteps ? "inline-flex" : "none";
+
+        if (currentStep === totalSteps) buildSummary();
+      }
+
+      function validateStep(step) {
+        clearErrors();
+
+        if (step === 1 && !selectedReason) {
+          alert("Selecciona un motivo de consulta para continuar.");
+          return false;
+        }
+
+        if (step === 2) {
+          const requiredFields = document.querySelectorAll("#step-2 [data-required='true']");
+          let isValid = true;
+          requiredFields.forEach(field => {
+            if (!field.value.trim()) {
+              markError(field);
+              isValid = false;
+            }
+          });
+          if (!isValid) return false;
+        }
+
+        return true;
+      }
+
+      function clearErrors() {
+        form.querySelectorAll(".input-group").forEach(group => group.classList.remove("has-error"));
+      }
+
+      function markError(field) {
+        const group = field.closest(".input-group");
+        if (group) group.classList.add("has-error");
+        field.focus({ preventScroll: true });
+      }
+
+      function injectConditionalFields(reason) {
+        const templates = {
+          "Enfermedad aguda": `
+            <div class="input-group full"><label for="cSintomas">Síntomas principales</label><textarea id="cSintomas" placeholder="Fiebre, tos, dolor, vómitos, diarrea..."></textarea></div>
+            <div class="input-group"><label for="cTiempo">¿Desde cuándo?</label><input id="cTiempo" type="text" placeholder="Ej: desde ayer en la noche"></div>
+            <div class="input-group"><label for="cRespira">¿Dificultad para respirar?</label><select id="cRespira"><option>No</option><option>Un poco</option><option>Sí, mucha</option></select></div>
+          `,
+          "Control pediátrico": `
+            <div class="input-group"><label for="cUltimoControl">Último control pediátrico</label><input id="cUltimoControl" type="text" placeholder="Ej: hace 6 meses"></div>
+            <div class="input-group full"><label for="cControlDudas">¿Qué quieres revisar?</label><textarea id="cControlDudas" placeholder="Crecimiento, vacunas, alimentación, desarrollo..."></textarea></div>
+          `,
+          "Sueño infantil": `
+            <div class="input-group"><label for="cPantallas">¿Usa pantallas antes de dormir?</label><select id="cPantallas"><option>No</option><option>A veces</option><option>Sí</option></select></div>
+            <div class="input-group"><label for="cDespertares">Despertares por noche</label><input id="cDespertares" type="text" placeholder="Ej: 2 a 3 veces"></div>
+            <div class="input-group full"><label for="cSuenoDetalle">Principal preocupación</label><textarea id="cSuenoDetalle" placeholder="Ronquidos, miedo, resistencia a dormir, despertares..."></textarea></div>
+          `,
+          "Alimentación": `
+            <div class="input-group"><label for="cSelectivo">¿Come pocos alimentos?</label><select id="cSelectivo"><option>No</option><option>Algo selectivo</option><option>Muy selectivo</option></select></div>
+            <div class="input-group"><label for="cTexturas">¿Rechaza texturas?</label><select id="cTexturas"><option>No</option><option>A veces</option><option>Sí</option></select></div>
+            <div class="input-group full"><label for="cAlimentacionDetalle">Detalles relevantes</label><textarea id="cAlimentacionDetalle" placeholder="Alimentos aceptados, alimentos rechazados, náuseas, peso..."></textarea></div>
+          `,
+          "Neurodiversidad": `
+            <div class="input-group"><label for="cDiagnostico">¿Tiene diagnóstico previo?</label><select id="cDiagnostico"><option>No</option><option>En evaluación</option><option>Autismo</option><option>TDAH</option><option>Otro</option></select></div>
+            <div class="input-group"><label for="cSensorial">Área que más preocupa</label><select id="cSensorial"><option>Conducta</option><option>Lenguaje</option><option>Sensorial</option><option>Alimentación</option><option>Sueño</option><option>Escuela</option></select></div>
+            <div class="input-group full"><label for="cNeuroDetalle">Cuéntanos qué está pasando</label><textarea id="cNeuroDetalle" placeholder="Crisis, sensibilidad a sonidos, dificultad social, impulsividad..."></textarea></div>
+          `,
+          "Crecimiento u hormonal": `
+            <div class="input-group full"><label for="cHormonalCambios">Cambios observados</label><textarea id="cHormonalCambios" placeholder="Olor corporal, vello, acné, botones mamarios, cambios de talla..."></textarea></div>
+            <div class="input-group"><label for="cTallaPeso">Talla/peso si los conoces</label><input id="cTallaPeso" type="text" placeholder="Opcional"></div>
+            <div class="input-group"><label for="cEdadCambios">Edad en que iniciaron los cambios</label><input id="cEdadCambios" type="text" placeholder="Ej: 7 años"></div>
+          `
+        };
+
+        conditionalFields.innerHTML = `<div class="form-grid">${templates[reason] || ""}</div>`;
+      }
+
+      function getValue(id, fallback = "No indicado") {
+        const field = document.getElementById(id);
+        return field && field.value.trim() ? field.value.trim() : fallback;
+      }
+
+      function getConditionalDetails() {
+        const fields = conditionalFields.querySelectorAll("input, select, textarea");
+        return Array.from(fields).map(field => {
+          const label = field.closest(".input-group")?.querySelector("label")?.textContent?.trim() || field.id;
+          const value = field.value.trim() || "No indicado";
+          return `🔹 *${label}:* ${value}`;
+        }).join("\n");
+      }
+
+      function buildSummary() {
+        const lines = [
+          `Motivo: ${selectedReason || "No indicado"}`,
+          `Acudiente: ${getValue("acudiente")}`,
+          `Paciente: ${getValue("paciente")} (${getValue("edad")})`,
+          `Zona: ${getValue("zona")}`,
+          `Preferencia: ${getValue("prefContacto")} (${getValue("horario")})`
+        ];
+        summary.textContent = `Resumen que se enviará:\n${lines.join("\n")}`;
+      }
+
+      function buildWhatsAppMessage() {
+        let message = "*NUEVA PRECONSULTA - CLINIC CAPULLO*\n\n";
+        message += `🔹 *Motivo:* ${selectedReason}\n`;
+        message += `🔹 *Acudiente:* ${getValue("acudiente")}\n`;
+        message += `🔹 *Teléfono:* ${getValue("telefono")}\n`;
+        message += `🔹 *Paciente:* ${getValue("paciente")} (${getValue("edad")})\n`;
+        message += `🔹 *Zona:* ${getValue("zona")}\n`;
+        message += `🔹 *Preferencia:* ${getValue("prefContacto")} (${getValue("horario")})\n\n`;
+        message += "*Detalles del caso*\n";
+        message += `${getConditionalDetails() || "No indicado"}\n\n`;
+        message += "_Acepté que esta preconsulta no reemplaza una evaluación médica. Ante señales de emergencia, acudiré a urgencias._\n";
+        message += "_Mensaje automático generado desde la web._";
+        return message;
+      }
+    }
+
+    function initThreeScene() {
+      const canvas = document.getElementById("hero-canvas");
+      if (!canvas || typeof THREE === "undefined") return;
+
+      const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(62, window.innerWidth / window.innerHeight, 0.1, 1000);
+      camera.position.set(0, 0, 6);
+
+      const group = new THREE.Group();
+      scene.add(group);
+
+      const ambient = new THREE.AmbientLight(0xfff1f7, 1.2);
+      scene.add(ambient);
+
+      const light = new THREE.DirectionalLight(0xffffff, 1.1);
+      light.position.set(4, 5, 7);
+      scene.add(light);
+
+      const material = new THREE.MeshPhongMaterial({
+        color: 0xe6007e,
+        transparent: true,
+        opacity: 0.36,
+        shininess: 90,
+        wireframe: true
+      });
+
+      const coralMaterial = new THREE.MeshPhongMaterial({
+        color: 0xff8a65,
+        transparent: true,
+        opacity: 0.24,
+        shininess: 70,
+        wireframe: true
+      });
+
+      const geometry = new THREE.IcosahedronGeometry(1, 2);
+
+      for (let i = 0; i < 22; i += 1) {
+        const mesh = new THREE.Mesh(geometry, i % 3 === 0 ? coralMaterial : material);
+        const radius = 1.4 + Math.random() * 2.7;
+        const angle = Math.random() * Math.PI * 2;
+        mesh.position.set(Math.cos(angle) * radius, Math.sin(angle) * radius * 0.65, Math.random() * 2.2 - 1.1);
+        mesh.scale.setScalar(0.12 + Math.random() * 0.34);
+        mesh.userData.speed = 0.0008 + Math.random() * 0.0018;
+        group.add(mesh);
+      }
+
+      function resize() {
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+        renderer.setSize(width, height, false);
+      }
+
+      window.addEventListener("resize", resize, { passive: true });
+      resize();
+
+      let frameId = null;
+      function animate(time) {
+        if (!prefersReducedMotion) {
+          group.rotation.y += 0.0018;
+          group.rotation.x = Math.sin(time * 0.0002) * 0.12;
+          group.children.forEach((child, index) => {
+            child.rotation.x += child.userData.speed;
+            child.rotation.y += child.userData.speed * 1.4;
+            child.position.y += Math.sin(time * 0.001 + index) * 0.0009;
+          });
+        }
+        renderer.render(scene, camera);
+        frameId = requestAnimationFrame(animate);
+      }
+
+      const visibilityObserver = new IntersectionObserver(entries => {
+        const isVisible = entries[0]?.isIntersecting;
+        if (isVisible && frameId === null) animate(0);
+        if (!isVisible && frameId !== null) {
+          cancelAnimationFrame(frameId);
+          frameId = null;
+        }
+      }, { threshold: 0.02 });
+
+      visibilityObserver.observe(document.getElementById("inicio"));
+    }
+  </script>
+</body>
+</html>

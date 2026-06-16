@@ -296,6 +296,51 @@
     .hero-grid { display: grid; gap: 2rem; }
     .hero-copy { display: grid; gap: 1.15rem; position: relative; z-index: 2; }
     .hero h1 em { color: var(--brand); font-style: italic; }
+    .clinic-status {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .55rem .8rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--surface) 88%, transparent);
+      color: var(--text);
+      font-size: .88rem;
+      font-weight: 850;
+      line-height: 1.25;
+      box-shadow: var(--shadow);
+    }
+    .clinic-status .status-dot {
+      width: .68rem;
+      height: .68rem;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--subtle);
+      box-shadow: 0 0 0 .24rem color-mix(in srgb, var(--subtle) 16%, transparent);
+    }
+    .clinic-status[data-state="open"] {
+      border-color: color-mix(in srgb, var(--success) 42%, var(--line));
+      background: color-mix(in srgb, var(--success) 9%, var(--surface));
+    }
+    .clinic-status[data-state="open"] .status-dot {
+      background: var(--success);
+      box-shadow: 0 0 0 .24rem color-mix(in srgb, var(--success) 18%, transparent);
+    }
+    .clinic-status[data-state="closed"] {
+      border-color: color-mix(in srgb, var(--danger) 32%, var(--line));
+      background: color-mix(in srgb, var(--danger) 7%, var(--surface));
+    }
+    .clinic-status[data-state="closed"] .status-dot {
+      background: var(--danger);
+      box-shadow: 0 0 0 .24rem color-mix(in srgb, var(--danger) 15%, transparent);
+    }
+    .status-note {
+      margin: -.65rem 0 0;
+      color: var(--subtle);
+      font-size: .78rem;
+      line-height: 1.45;
+    }
     .hero-list { list-style: none; display: grid; gap: .7rem; color: var(--muted); font-weight: 700; }
     .hero-list li { display: grid; grid-template-columns: 1.25rem 1fr; gap: .6rem; align-items: start; }
     .hero-list li::before { content: "✿"; color: var(--coral); }
@@ -541,6 +586,33 @@
     .status { min-height: 1.5rem; color: var(--danger); font-weight: 750; font-size: .9rem; }
 
     .contact-card { display: grid; gap: 1rem; }
+    .hours-panel {
+      display: grid;
+      gap: .75rem;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      background: var(--surface-2);
+    }
+    .hours-panel h4 {
+      margin: 0;
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.25;
+    }
+    .hours-list { margin: 0; display: grid; gap: .55rem; }
+    .hours-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 1rem;
+      align-items: baseline;
+      padding-bottom: .55rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .hours-row:last-child { padding-bottom: 0; border-bottom: 0; }
+    .hours-row dt { color: var(--muted); font-weight: 750; }
+    .hours-row dd { margin: 0; color: var(--text); font-weight: 850; text-align: right; }
+    .hours-note { margin: 0; color: var(--subtle); font-size: .78rem; line-height: 1.45; }
     address { font-style: normal; color: var(--muted); }
     .contact-row { display: grid; grid-template-columns: 1.4rem 1fr; gap: .65rem; align-items: start; }
     .contact-row strong { color: var(--text); }
@@ -631,7 +703,7 @@
     }
   </style>
 
-  <script id="structured-data" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["MedicalClinic","LocalBusiness"],"@id":"https://www.cliniccapullo.com/#clinic","name":"Clinic Capullo","url":"https://www.cliniccapullo.com/?lang=es","description":"Atención pediátrica integral en Ciudad de Panamá: crecimiento, sueño, alimentación, neurodiversidad y endocrinología pediátrica. Inicia tu preconsulta por WhatsApp.","telephone":"+5073908997","priceRange":"$$","medicalSpecialty":"https://schema.org/Pediatric","hasMap":"https://share.google/H0P1T49c83yLTpJLl","image":["https://www.cliniccapullo.com/img/img.png","https://www.cliniccapullo.com/img/img1.png","https://www.cliniccapullo.com/img/img2.png","https://www.cliniccapullo.com/img/img3.png","https://www.cliniccapullo.com/img/img4.png","https://www.cliniccapullo.com/img/img5.png","https://www.cliniccapullo.com/img/img6.png"],"address":{"@type":"PostalAddress","streetAddress":"Centro Especializado San Fernando, Suite 7-13, Vía España","addressLocality":"Ciudad de Panamá","addressCountry":"PA"},"areaServed":{"@type":"City","name":"Ciudad de Panamá"},"contactPoint":[{"@type":"ContactPoint","telephone":"+5073908997","contactType":"appointments","availableLanguage":["es","en"],"url":"tel:+5073908997"},{"@type":"ContactPoint","telephone":"+50763640108","contactType":"appointments","availableLanguage":["es","en"],"url":"https://wa.me/50763640108"}],"potentialAction":[{"@type":"CommunicateAction","name":"Llamar a Clinic Capullo","target":"tel:+5073908997"},{"@type":"CommunicateAction","name":"Contactar a Clinic Capullo por WhatsApp","target":"https://wa.me/50763640108"}],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios pediátricos","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Consulta pediátrica","provider":{"@id":"https://www.cliniccapullo.com/#clinic"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Crecimiento y desarrollo","provider":{"@id":"https://www.cliniccapullo.com/#clinic"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Sueño infantil","provider":{"@id":"https://www.cliniccapullo.com/#clinic"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Alimentación selectiva","provider":{"@id":"https://www.cliniccapullo.com/#clinic"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Neurodiversidad","provider":{"@id":"https://www.cliniccapullo.com/#clinic"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Endocrinología pediátrica","provider":{"@id":"https://www.cliniccapullo.com/#clinic"}}}]}},{"@type":"WebSite","@id":"https://www.cliniccapullo.com/#website","url":"https://www.cliniccapullo.com/","name":"Clinic Capullo","inLanguage":"es-PA","publisher":{"@id":"https://www.cliniccapullo.com/#clinic"}},{"@type":"ImageObject","@id":"https://www.cliniccapullo.com/?lang=es#primaryimage","url":"https://www.cliniccapullo.com/img/img.png","contentUrl":"https://www.cliniccapullo.com/img/img.png","caption":"Atención pediátrica de Clinic Capullo en Ciudad de Panamá","inLanguage":"es-PA"},{"@type":"WebPage","@id":"https://www.cliniccapullo.com/?lang=es#webpage","url":"https://www.cliniccapullo.com/?lang=es","name":"Clinic Capullo | Clínica pediátrica en Ciudad de Panamá","description":"Atención pediátrica integral en Ciudad de Panamá: crecimiento, sueño, alimentación, neurodiversidad y endocrinología pediátrica. Inicia tu preconsulta por WhatsApp.","inLanguage":"es-PA","isPartOf":{"@id":"https://www.cliniccapullo.com/#website"},"about":{"@id":"https://www.cliniccapullo.com/#clinic"},"primaryImageOfPage":{"@id":"https://www.cliniccapullo.com/?lang=es#primaryimage"}},{"@type":"FAQPage","@id":"https://www.cliniccapullo.com/?lang=es#faq","inLanguage":"es-PA","mainEntity":[{"@type":"Question","name":"¿Clinic Capullo atiende niños con Autismo o TDAH?","acceptedAnswer":{"@type":"Answer","text":"Sí. Acompañamos a familias con inquietudes de neurodesarrollo y perfiles sensoriales diversos desde una mirada pediátrica respetuosa. La evaluación y el plan se individualizan."}},{"@type":"Question","name":"¿Qué es la preconsulta pediátrica?","acceptedAnswer":{"@type":"Answer","text":"Es una herramienta que organiza el motivo, los datos mínimos de contacto y una descripción breve para facilitar el primer contacto por WhatsApp. No es una consulta ni un diagnóstico."}},{"@type":"Question","name":"¿La preconsulta reemplaza una cita?","acceptedAnswer":{"@type":"Answer","text":"No. Solo ayuda a preparar el contacto inicial y a orientar la coordinación de una posible cita."}},{"@type":"Question","name":"¿Cuándo conviene consultar por cambios puberales?","acceptedAnswer":{"@type":"Answer","text":"Cuando aparecen antes de lo esperado, progresan con rapidez o se acompañan de un cambio marcado en el ritmo de crecimiento. La valoración debe considerar la edad, la historia y la curva del paciente."}},{"@type":"Question","name":"¿Cómo puedo mejorar el sueño de mi hijo?","acceptedAnswer":{"@type":"Answer","text":"Ayudan los horarios consistentes, una rutina breve, menos pantallas antes de dormir y un ambiente cómodo. Si hay ronquidos intensos, pausas respiratorias o cansancio diurno, conviene consultar."}},{"@type":"Question","name":"¿Qué hago si mi hijo acepta muy pocos alimentos?","acceptedAnswer":{"@type":"Answer","text":"Evita forzar, conserva alimentos seguros y presenta otros de forma gradual. Consulta si hay dolor, arcadas frecuentes, pérdida de peso, ansiedad intensa o reducción progresiva de la variedad."}},{"@type":"Question","name":"¿Dónde está ubicada la clínica?","acceptedAnswer":{"@type":"Answer","text":"En Centro Especializado San Fernando, Suite 7-13, Vía España, Ciudad de Panamá."}},{"@type":"Question","name":"¿Cómo puedo agendar?","acceptedAnswer":{"@type":"Answer","text":"Puedes completar la preconsulta, escribir al WhatsApp 6364-0108 o llamar al 390-8997."}}]}]}</script>
+  <script id="structured-data" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["MedicalClinic","LocalBusiness"],"@id":"https://www.cliniccapullo.com/#clinic","name":"Clinic Capullo","url":"https://www.cliniccapullo.com/?lang=es","description":"Atención pediátrica integral en Ciudad de Panamá: crecimiento, sueño, alimentación, neurodiversidad y endocrinología pediátrica. Inicia tu preconsulta por WhatsApp.","telephone":"+5073908997","priceRange":"$$","medicalSpecialty":"https://schema.org/Pediatric","hasMap":"https://share.google/H0P1T49c83yLTpJLl","image":["https://www.cliniccapullo.com/img/img.png","https://www.cliniccapullo.com/img/img1.png","https://www.cliniccapullo.com/img/img2.png","https://www.cliniccapullo.com/img/img3.png","https://www.cliniccapullo.com/img/img4.png","https://www.cliniccapullo.com/img/img5.png","https://www.cliniccapullo.com/img/img6.png"],"address":{"@type":"PostalAddress","streetAddress":"Centro Especializado San Fernando, Suite 7-13, Vía España","addressLocality":"Ciudad de Panamá","addressCountry":"PA"},"areaServed":{"@type":"City","name":"Ciudad de Panamá"},"contactPoint":[{"@type":"ContactPoint","telephone":"+5073908997","contactType":"appointments","availableLanguage":["es","en"],"url":"tel:+5073908997"},{"@type":"ContactPoint","telephone":"+50763640108","contactType":"appointments","availableLanguage":["es","en"],"url":"https://wa.me/50763640108"}],"potentialAction":[{"@type":"CommunicateAction","name":"Llamar a Clinic Capullo","target":"tel:+5073908997"},{"@type":"CommunicateAction","name":"Contactar a Clinic Capullo por WhatsApp","target":"https://wa.me/50763640108"}],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios pediátricos","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Consulta pediátrica","provider":{"@id":"https://www.cliniccapullo.com/#clinic"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Crecimiento y desarrollo","provider":{"@id":"https://www.cliniccapullo.com/#clinic"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Sueño infantil","provider":{"@id":"https://www.cliniccapullo.com/#clinic"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Alimentación selectiva","provider":{"@id":"https://www.cliniccapullo.com/#clinic"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Neurodiversidad","provider":{"@id":"https://www.cliniccapullo.com/#clinic"}}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Endocrinología pediátrica","provider":{"@id":"https://www.cliniccapullo.com/#clinic"}}}]},"openingHours":"Mo-Fr 15:00-20:00","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["https://schema.org/Monday","https://schema.org/Tuesday","https://schema.org/Wednesday","https://schema.org/Thursday","https://schema.org/Friday"],"opens":"15:00","closes":"20:00"}]},{"@type":"WebSite","@id":"https://www.cliniccapullo.com/#website","url":"https://www.cliniccapullo.com/","name":"Clinic Capullo","inLanguage":"es-PA","publisher":{"@id":"https://www.cliniccapullo.com/#clinic"}},{"@type":"ImageObject","@id":"https://www.cliniccapullo.com/?lang=es#primaryimage","url":"https://www.cliniccapullo.com/img/img.png","contentUrl":"https://www.cliniccapullo.com/img/img.png","caption":"Atención pediátrica de Clinic Capullo en Ciudad de Panamá","inLanguage":"es-PA"},{"@type":"WebPage","@id":"https://www.cliniccapullo.com/?lang=es#webpage","url":"https://www.cliniccapullo.com/?lang=es","name":"Clinic Capullo | Clínica pediátrica en Ciudad de Panamá","description":"Atención pediátrica integral en Ciudad de Panamá: crecimiento, sueño, alimentación, neurodiversidad y endocrinología pediátrica. Inicia tu preconsulta por WhatsApp.","inLanguage":"es-PA","isPartOf":{"@id":"https://www.cliniccapullo.com/#website"},"about":{"@id":"https://www.cliniccapullo.com/#clinic"},"primaryImageOfPage":{"@id":"https://www.cliniccapullo.com/?lang=es#primaryimage"}},{"@type":"FAQPage","@id":"https://www.cliniccapullo.com/?lang=es#faq","inLanguage":"es-PA","mainEntity":[{"@type":"Question","name":"¿Clinic Capullo atiende niños con Autismo o TDAH?","acceptedAnswer":{"@type":"Answer","text":"Sí. Acompañamos a familias con inquietudes de neurodesarrollo y perfiles sensoriales diversos desde una mirada pediátrica respetuosa. La evaluación y el plan se individualizan."}},{"@type":"Question","name":"¿Qué es la preconsulta pediátrica?","acceptedAnswer":{"@type":"Answer","text":"Es una herramienta que organiza el motivo, los datos mínimos de contacto y una descripción breve para facilitar el primer contacto por WhatsApp. No es una consulta ni un diagnóstico."}},{"@type":"Question","name":"¿La preconsulta reemplaza una cita?","acceptedAnswer":{"@type":"Answer","text":"No. Solo ayuda a preparar el contacto inicial y a orientar la coordinación de una posible cita."}},{"@type":"Question","name":"¿Cuándo conviene consultar por cambios puberales?","acceptedAnswer":{"@type":"Answer","text":"Cuando aparecen antes de lo esperado, progresan con rapidez o se acompañan de un cambio marcado en el ritmo de crecimiento. La valoración debe considerar la edad, la historia y la curva del paciente."}},{"@type":"Question","name":"¿Cómo puedo mejorar el sueño de mi hijo?","acceptedAnswer":{"@type":"Answer","text":"Ayudan los horarios consistentes, una rutina breve, menos pantallas antes de dormir y un ambiente cómodo. Si hay ronquidos intensos, pausas respiratorias o cansancio diurno, conviene consultar."}},{"@type":"Question","name":"¿Qué hago si mi hijo acepta muy pocos alimentos?","acceptedAnswer":{"@type":"Answer","text":"Evita forzar, conserva alimentos seguros y presenta otros de forma gradual. Consulta si hay dolor, arcadas frecuentes, pérdida de peso, ansiedad intensa o reducción progresiva de la variedad."}},{"@type":"Question","name":"¿Dónde está ubicada la clínica?","acceptedAnswer":{"@type":"Answer","text":"En Centro Especializado San Fernando, Suite 7-13, Vía España, Ciudad de Panamá."}},{"@type":"Question","name":"¿Cómo puedo agendar?","acceptedAnswer":{"@type":"Answer","text":"Puedes completar la preconsulta, escribir al WhatsApp 6364-0108 o llamar al 390-8997."}}]}]}</script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">
@@ -682,6 +754,11 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <span class="eyebrow"><span class="lang-es">Clínica pediátrica · Ciudad de Panamá</span><span class="lang-en">Pediatric clinic · Panama City</span></span>
+          <div class="clinic-status" id="clinicStatus" data-state="schedule" role="status" aria-live="polite">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span id="clinicStatusText"><span class="lang-es">Horario habitual · lunes a viernes, 3:00 p.m. a 8:00 p.m.</span><span class="lang-en">Regular hours · Monday to Friday, 3:00 p.m. to 8:00 p.m.</span></span>
+          </div>
+          <p class="status-note"><span class="lang-es">Estado calculado con la hora de Panamá. El horario puede variar en días feriados.</span><span class="lang-en">Status is calculated using Panama time. Hours may vary on public holidays.</span></p>
           <h1>
             <span class="lang-es">Acompañamos el <em>desarrollo integral</em> de tu hijo</span>
             <span class="lang-en">We support your child’s <em>whole development</em></span>
@@ -968,6 +1045,20 @@
           <article class="card contact-card">
             <figure class="section-image contact-image"><img src="img/img6.png" width="1200" height="750" loading="lazy" decoding="async" alt="Fachada o referencia visual de la ubicación de Clinic Capullo" data-alt-es="Fachada o referencia visual de la ubicación de Clinic Capullo" data-alt-en="Visual reference for the location of Clinic Capullo" data-placeholder-image="img/img6.png"></figure>
             <h3>Clinic Capullo</h3>
+            <section class="hours-panel" aria-labelledby="hours-title">
+              <h4 id="hours-title"><span aria-hidden="true">🕒</span> <span class="lang-es">Horario de atención</span><span class="lang-en">Opening hours</span></h4>
+              <dl class="hours-list">
+                <div class="hours-row">
+                  <dt><span class="lang-es">Lunes a viernes</span><span class="lang-en">Monday to Friday</span></dt>
+                  <dd><time datetime="15:00">3:00 p.m.</time> – <time datetime="20:00">8:00 p.m.</time></dd>
+                </div>
+                <div class="hours-row">
+                  <dt><span class="lang-es">Sábados y domingos</span><span class="lang-en">Saturday and Sunday</span></dt>
+                  <dd><span class="lang-es">Cerrado</span><span class="lang-en">Closed</span></dd>
+                </div>
+              </dl>
+              <p class="hours-note"><span class="lang-es">Horario habitual. Puede variar en días feriados.</span><span class="lang-en">Regular hours. Hours may vary on public holidays.</span></p>
+            </section>
             <address>
               <div class="contact-row"><span aria-hidden="true">📍</span><div><strong><span class="lang-es">Ubicación</span><span class="lang-en">Location</span></strong><br><a class="map-link" href="https://share.google/H0P1T49c83yLTpJLl" target="_blank" rel="noopener noreferrer">Centro Especializado San Fernando, Suite 7-13, Vía España, Ciudad de Panamá</a></div></div>
               <div class="contact-row"><span aria-hidden="true">📞</span><div><strong><span class="lang-es">Teléfono</span><span class="lang-en">Phone</span></strong><br><a href="tel:+5073908997">+507 390-8997</a></div></div>
@@ -1109,6 +1200,41 @@
         }
       };
 
+      function updateClinicStatus() {
+        var statusBox = document.getElementById('clinicStatus');
+        var statusText = document.getElementById('clinicStatusText');
+        if (!statusBox || !statusText || !window.Intl || !Intl.DateTimeFormat) return;
+
+        var parts = new Intl.DateTimeFormat('en-US', {
+          timeZone: 'America/Panama',
+          weekday: 'short',
+          hour: '2-digit',
+          minute: '2-digit',
+          hourCycle: 'h23'
+        }).formatToParts(new Date());
+        var values = {};
+        parts.forEach(function (part) { values[part.type] = part.value; });
+
+        var dayIndex = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 }[values.weekday];
+        var minutes = Number(values.hour) * 60 + Number(values.minute);
+        var isWeekday = dayIndex >= 1 && dayIndex <= 5;
+        var isOpen = isWeekday && minutes >= 15 * 60 && minutes < 20 * 60;
+        var message;
+
+        if (isOpen) {
+          message = lang === 'en' ? 'Open now · until 8:00 p.m.' : 'Abierto ahora · hasta las 8:00 p.m.';
+        } else if (isWeekday && minutes < 15 * 60) {
+          message = lang === 'en' ? 'Closed now · opens today at 3:00 p.m.' : 'Cerrado ahora · abre hoy a las 3:00 p.m.';
+        } else if (dayIndex >= 1 && dayIndex <= 4) {
+          message = lang === 'en' ? 'Closed now · opens tomorrow at 3:00 p.m.' : 'Cerrado ahora · abre mañana a las 3:00 p.m.';
+        } else {
+          message = lang === 'en' ? 'Closed now · opens Monday at 3:00 p.m.' : 'Cerrado ahora · abre el lunes a las 3:00 p.m.';
+        }
+
+        statusBox.dataset.state = isOpen ? 'open' : 'closed';
+        statusText.textContent = message;
+      }
+
       function localizedUrl(nextLang) {
         var url = new URL(window.location.href);
         url.searchParams.set('lang', nextLang);
@@ -1149,6 +1275,19 @@
               telephone: '+5073908997',
               priceRange: '$$',
               medicalSpecialty: 'https://schema.org/Pediatric',
+              openingHours: 'Mo-Fr 15:00-20:00',
+              openingHoursSpecification: [{
+                '@type': 'OpeningHoursSpecification',
+                dayOfWeek: [
+                  'https://schema.org/Monday',
+                  'https://schema.org/Tuesday',
+                  'https://schema.org/Wednesday',
+                  'https://schema.org/Thursday',
+                  'https://schema.org/Friday'
+                ],
+                opens: '15:00',
+                closes: '20:00'
+              }],
               hasMap: 'https://share.google/H0P1T49c83yLTpJLl',
               image: [
                 'https://www.cliniccapullo.com/img/img.png',
@@ -1446,6 +1585,8 @@
 
       updateMetadata();
       updateStructuredData();
+      updateClinicStatus();
+      window.setInterval(updateClinicStatus, 60000);
       initializeImages();
       updateWhatsAppLinks();
       updateWizard();
